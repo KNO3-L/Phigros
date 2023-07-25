@@ -1,0 +1,95 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    overflow: hidden;
+    height: 722px;
+}
+
+#playArea {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+}
+
+#panDingLine {
+    background-color: yellow;
+    width: 100%;
+    height: 8px;
+    position: absolute;
+    bottom: 20%;
+    z-index: 0;
+}
+
+#background {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 722px;
+    filter: brightness(0.5);
+}
+
+.Flick,
+.Tap,
+.Drag,
+.Hold {
+    position: absolute;
+    width: 100px;
+    display: inline-block;
+    border: 2px solid white;
+    top: 0px;
+}
+
+.Flick {
+    height: 8px;
+    background-color: pink;
+}
+
+.Tap {
+    height: 8px;
+    background-color: #32bee2;
+}
+
+.Hold {
+    height: 8px;
+    background-color: #eef1a2;
+}
+
+.Drag {
+    background-color: #32bee2;
+}
+
+.pandingBlock {
+    width: 100px;
+    height: 100%;
+    /* background-color: #fff; */
+    position: absolute;
+    z-index: 10;
+}
+
+#point {
+    position: absolute;
+    right: 20px;
+    color: #fff;
+    font-size: 30px;
+}
+
+#combo {
+    color: #fff;
+    text-align: center;
+    width: 100px;
+    position: absolute;
+    left: 42.307%;
+    font-size: 20px;
+    display: none;
+}
+
+.pandingBlock {
+    text-align: center;
+    color: #fff;
+}
