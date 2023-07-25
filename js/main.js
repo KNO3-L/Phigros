@@ -5,7 +5,7 @@
 每行最多音符:6
 */
 const NOUSEWIDTH = 200;
-let [combo_cont, point, perfect, good, bad] = Array(5).fill(0);
+let [combo_cont, point, perfect, good, bad, miss] = Array(6).fill(0);
 
 const POINT_AREA = document.getElementById('point')
 POINT_AREA.innerHTML = '000000'
@@ -34,14 +34,11 @@ var time = 0;
 let setTime = setInterval('time++', 400 / speed);
 
 // 谱面
-const PUMIAN = [];
 const TIMES = [];
 const ELEMENTS = [];
-const MISS = [];
 
 
-// 生成铺面,PUMIAN[i] = [time,kind,place,*hight]
-PUMIAN.push([1, 'Tap', 0], [2, 'Tap', 1], [3, 'Tap', 2], [4, 'Tap', 3], [5, 'Tap', 4], [6, 'Tap', 5],);
+// 生成谱面
 for (v of PUMIAN) {
     TIMES.push(v[0]);
 }
@@ -73,6 +70,9 @@ function elementsDown(e) {
         combo_cont = 0
         COMBO_AREA.style.display = 'none'
         e.isOnArea = false
+
+        console.log('Miss')
+        miss += 1
     }
 }
 
@@ -130,7 +130,7 @@ function panding(place) {
         good += 1
     }
     // bad
-    else {
+    else if (e_top < 722 * .8 + speed * 5 * 32 && e_top > 722 * .8 - speed * 5 * 32) {
         console.log('Bad')
         combo_cont = 0
         COMBO_AREA.style.display = 'none'
